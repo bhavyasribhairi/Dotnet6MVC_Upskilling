@@ -1,7 +1,14 @@
+using MVC6Youtube.Data;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<MVC6YoutubeDbContext>(options =>
+
+options.UseSqlServer(builder.Configuration.GetConnectionString("UpSkilling_Rewrite")));
 
 var app = builder.Build();
 

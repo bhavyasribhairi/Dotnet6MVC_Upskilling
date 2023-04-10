@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<MVC6Youtube.Models.Employee>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Employee Designation</th>
+            <th scope="col">Age </th>
+            <th scope="col">Phone</th>
+            <th scope="col">Settings</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.EmployeeId</th>
+                <td>@item.EmployeeName</td>
+                <td>@item.Designation</td>
+                <td>@item.EmployeeAge</td>
+                <td>@item.Phone</td>
+                <td><a href="Edit/@item.EmployeeId"><i class="fas fa-edit"></i></a></td>
+                <td><a href="Delete/@item.EmployeeId"><i class="fa fa-trash-o" style="font-size:48px;color:red"></i></a></td>
+                
+            </tr>
+
+        }
+
+    </tbody>
+</table>
